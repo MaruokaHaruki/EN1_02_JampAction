@@ -28,6 +28,7 @@ public class ArrowDraw : MonoBehaviour {
             arrowImage.gameObject.SetActive(true);
         }
 
+
         //離したときの座標
         if (Input.GetMouseButtonUp(0)) {
             arrowImage.gameObject.SetActive(false);
