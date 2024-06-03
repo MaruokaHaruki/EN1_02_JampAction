@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2336602950075943756}
   - component: {fileID: 8937806879035523884}
   - component: {fileID: 6623358617292679091}
+  - component: {fileID: 3118120928488812596}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -111,7 +112,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 72
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &6623358617292679091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,3 +134,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3118120928488812596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445091125075188576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb18a8bdf0ef8e04ea9620f5ce6683d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPower: 10
