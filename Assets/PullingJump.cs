@@ -41,14 +41,29 @@ public class PullingJump : MonoBehaviour {
     }
 
 
-    private void InCollisionEnter(Collision collision) {
+    private void OnCollisionEnter(Collision collision) {
         Debug.Log("衝突した");
     }
 
 
     private void OnCollisionStay(Collision collision) {
         Debug.Log("接触中");
-        isCanJamp = true;
+
+        //衝突している点の情報が複数収納されている
+        ContactPoint[] contscts = collision.contacts;
+        //0番目の衝突情報から、衝突している点の法線を取得
+        Vector3 othernormal = contscts[0].normal;
+        //上方向をしますベクトル
+        Vector3 upVector = new Vector3(0, 1, 0);
+        //上方向と法線の内積。２つのベクトルはともに長さが1なので、Cosθの結果があdotUN変数に入る。
+        float dotUN = Vector3.Dot(upVector, othernormal);
+        //内積値に逆三角arccosをかけて角度を算出。それを度数法へと変換する。これで角度が算出でできた。
+        float dotDeg = Mathf.Acos(dotUN) * Mathf.Deg2Rad;
+        //2つのベクトルがなす角度が45度より小さければ再びジャンプ可能とする
+        if(dotDeg <= 45) {
+            isCanJamp=true;
+        }
+
     }
 
 
